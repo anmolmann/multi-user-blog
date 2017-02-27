@@ -2,7 +2,7 @@
 
 Development of a blog application using Google App Engine.
 
-![blog demo](https://github.com/anmolmann/multi-user-blog/blob/master/images/project-prototype.png)
+![blog demo](https://github.com/anmolmann/multi-user-blog/blob/master/images/project-demo.png)
 
 ##### This document is intended to guide you through implementing the entire project.
 
