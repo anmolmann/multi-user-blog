@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="newPost">
+    <h2>New post</h2>
+
+    <form method="post" class="new-form">
+
+      <input type="hidden" name="id_post">
+
+      <label>
+        <div>subject</div>
+        <input type="text" name="subject" value="{{subject}}">
+      </label>
+
+      <label>
+        <div>blog</div>
+        <textarea name="content">{{content}}</textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+      
+      <div class="new-sub"><input type="submit" id="new-Sub"></div>
+      <div id="cancel">
+        <a href="/blog" class="cancel-link">cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

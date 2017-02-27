@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="signup-login">
+  <form method="post">
+    <table class="container">
+      <tr class="head">
+        <td id="sign">
+          <a href="/signup" title="Sign up" id="log-link">
+            Sign up
+          </a>
+        </td>
+        <td>
+          Login
+        </td>
+      </tr>
+      <tr>
+        <td class="label">
+          Username
+        </td>
+        <td>
+          <input type="text" name="username" value="{{username}}">
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">
+          Password
+        </td>
+        <td>
+          <input type="password" name="password" value="">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <div class="error">
+            {{error}}
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+{% endblock %}

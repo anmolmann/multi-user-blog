@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for p in posts %}
+  <div class="single-post">
+    {{ p.render() | safe }}
+    <div class="posts">
+    <br><br>
+      <!-- container for edit/delete posts -->
+      <div class="func-buttons">
+      
+          <form action="/blog/editpost/{{p.key().id()}}">
+          	<input type="submit" value="&#x270E;" class="edit-del-like" title="edit post">|
+          </form>
+          <form action="/blog/delpost/{{p.key().id()}}"> 
+        	 <input type="submit" value="&#x2718;" class="edit-del-like" title="delete post">
+          </form>
+      
+      </div>
+
+      <!--post comments-->
+      <div class="comment">
+          <a href="/blog/comment/{{p.key().id()}}" class="links" title="post comment">
+            comment
+          </a>
+      </div>
+
+      <!-- container for like/unlike posts -->
+      <div class="func-buttons like-button">
+        <form action="/blog/like/{{p.key().id()}}" class="count">
+          <input type="submit" class="edit-del-like" title="like post" value="&#x1f44d;">({{p.likes}}) |
+        </form>
+        <form action="/blog/dislike/{{p.key().id()}}" class="count">
+          <input type="submit" value="&#x1f44e;" class="edit-del-like" title="dislike post">({{p.dislikes}})
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}
